@@ -63,7 +63,7 @@ with open(os.path.join(KEY_DIR, "me.yml")) as f:
     NAME = conf["name"]
     DOMAIN = conf["domain"]
     SCHEME = "https" if conf.get("https", True) else "http"
-    BASE_URL = SCHEME + "://" + DOMAIN
+    BASE_URL = conf["base_url"]
     ID = BASE_URL
     SUMMARY = conf["summary"]
     ICON_URL = conf["icon_url"]
