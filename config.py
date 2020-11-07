@@ -103,7 +103,7 @@ mongo_client = MongoClient(
     host=[os.getenv("MICROBLOGPUB_MONGODB_HOST", "localhost:27017")]
 )
 
-DB_NAME = "{}_{}".format(USERNAME, DOMAIN.replace(".", "_"))
+DB_NAME = "microblogpub_{}".format(USERNAME)
 DB = mongo_client[DB_NAME]
 GRIDFS = mongo_client[f"{DB_NAME}_gridfs"]
 MEDIA_CACHE = MediaCache(GRIDFS, USER_AGENT)
