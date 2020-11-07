@@ -13,4 +13,4 @@ ADD . /app
 ENV FLASK_APP=app.py
 
 USER microblogpub
-CMD [ "gunicorn", "-b", "127.0.0.1:5005", "-w", "5", "--log-level", "debug", "app:app" ]
+CMD [ "gunicorn", "-b", "127.0.0.1:5005", "-w", "5", "-t", "600", "--log-level", "debug", "app:app" ]
